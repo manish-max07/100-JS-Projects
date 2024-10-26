@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My 100 JS Projects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            justify-content: center;
+        }
+
+        .project-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .project-card iframe {
+            width: 100%;
+            height: 150px;
+            border: none;
+        }
+
+        .project-title {
+            font-size: 1.2em;
+            color: #333;
+            padding: 15px 10px 0;
+        }
+
+        .project-button {
+            display: inline-block;
+            margin: 15px 0 20px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007acc;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .project-button:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My 100 JavaScript Projects</h1>
+    <div class="project-grid">
+        <div class="project-card">
+            <iframe src="https://manish-max07.github.io/100-JS-Projects/1-Weather-App/"></iframe>
+            <div class="project-title">Project 1: Weather App</div>
+            <a href="https://manish-max07.github.io/100-JS-Projects/1-Weather-App/" target="_blank" class="project-button">View</a>
+        </div>
+        
+        <div class="project-card">
+            <iframe src="https://manish-max07.github.io/100-JS-Projects/2-To-Do-List/"></iframe>
+            <div class="project-title">Project 2: To-Do List</div>
+            <a href="https://manish-max07.github.io/100-JS-Projects/2-To-Do-List/" target="_blank" class="project-button">View</a>
+        </div>
+        
+        <!-- Add more project cards as you complete them -->
+    </div>
+</body>
+</html>

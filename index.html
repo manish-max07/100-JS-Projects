@@ -39,11 +39,26 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
             overflow: hidden;
+            transition: width 0.3s ease;
         }
 
-        .project-card iframe {
+        /* Iframe container to handle scaling */
+        .iframe-container {
+            position: relative;
             width: 100%;
             height: 360px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1440px;  /* Full desktop width */
+            height: 900px;  /* Full desktop height */
+            transform: scale(0.46);  /* Scale down to fit container */
+            transform-origin: top left;  /*Keep scale relative to the top-left corner */
             border: none;
         }
 
@@ -69,37 +84,81 @@
         .project-button:hover {
             background-color: #005f99;
         }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .project-card {
+                width: 90%;
+            }
+
+            .iframe-container {
+                height: 250px;
+            }
+
+            .iframe-container iframe {
+                transform: scale(0.3);  /* Smaller scale for mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-card {
+                width: 100%;
+            }
+
+            .iframe-container {
+                height: 200px;
+            }
+
+            .iframe-container iframe {
+                transform: scale(0.3);  /* Smallest scale for smaller screens */
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Welcome to My 100 JavaScript Projects</h1>
     <div class="project-grid">
         <div class="project-card">
-            <iframe src="https://manish-max07.github.io/100-JS-Projects/1-Weather-App/"></iframe>
+            <div class="iframe-container">
+                <iframe src="https://manish-max07.github.io/100-JS-Projects/1-Weather-App/"></iframe>
+            </div>
             <div class="project-title">Project 1: Weather App</div>
             <a href="https://manish-max07.github.io/100-JS-Projects/1-Weather-App/" target="_blank" class="project-button">View</a>
         </div>
         
         <div class="project-card">
-            <iframe src="https://manish-max07.github.io/100-JS-Projects/2-To-Do-List/"></iframe>
+            <div class="iframe-container">
+                <iframe src="https://manish-max07.github.io/100-JS-Projects/2-To-Do-List/"></iframe>
+            </div>
             <div class="project-title">Project 2: To-Do List</div>
             <a href="https://manish-max07.github.io/100-JS-Projects/2-To-Do-List/" target="_blank" class="project-button">View</a>
         </div>
         <div class="project-card">
-            <iframe src="https://manish-max07.github.io/100-JS-Projects/3-Quiz-App/"></iframe>
+            <div class="iframe-container">
+                <iframe src="https://manish-max07.github.io/100-JS-Projects/3-Quiz-App/"></iframe>
+            </div>
             <div class="project-title">Project 3: Simple Quiz App</div>
             <a href="https://manish-max07.github.io/100-JS-Projects/3-Quiz-App/" target="_blank" class="project-button">View</a>
         </div>
         <div class="project-card">
-            <iframe src="https://manish-max07.github.io/100-JS-Projects/4-Password-Generator/"></iframe>
+            <div class="iframe-container">
+                <iframe src="https://manish-max07.github.io/100-JS-Projects/4-Password-Generator/"></iframe>
+            </div>
             <div class="project-title">Project 4: Random Password Generator</div>
             <a href="https://manish-max07.github.io/100-JS-Projects/4-Password-Generator/" target="_blank" class="project-button">View</a>
         </div>
         <div class="project-card">
-            <iframe src="https://manish-max07.github.io/100-JS-Projects/5-Notes-App/"></iframe>
+            <div class="iframe-container">
+                <iframe src="https://manish-max07.github.io/100-JS-Projects/5-Notes-App/"></iframe>
+            </div>
             <div class="project-title">Project 5: Notes App</div>
             <a href="https://manish-max07.github.io/100-JS-Projects/5-Notes-App/" target="_blank" class="project-button">View</a>
         </div>
+        
         
         <!-- Add more project cards as you complete them -->
     </div>

@@ -18,6 +18,9 @@ These projects were created to practice and improve my JavaScript skills, and yo
 - [Project 4: Random password Generator](https://manish-max07.github.io/100-JS-Projects/4-Password-Generator/)  
   A random password generator, generate a strong password and copy.
 
+- [Project 5: Notes App](https://manish-max07.github.io/100-JS-Projects/5-Notes-App/)  
+  A Simple notes app with delete note feature and local storage.
+
 - *(Add more projects as you complete them)*
 
 ## Getting Started

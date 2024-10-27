@@ -15,6 +15,9 @@ These projects were created to practice and improve my JavaScript skills, and yo
 - [Project 3: Simple Quiz App](https://manish-max07.github.io/100-JS-Projects/3-Quiz-App/)  
   A quiz application that displays questions with options and calculates the score at the end.
 
+- [Project 4: Random password Generator](https://manish-max07.github.io/100-JS-Projects/4-Password-Generator/)  
+  A random password generator, generate a strong password and copy.
+
 - *(Add more projects as you complete them)*
 
 ## Getting Started

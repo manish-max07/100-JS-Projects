@@ -21,6 +21,9 @@ These projects were created to practice and improve my JavaScript skills, and yo
 - [Project 5: Notes App](https://manish-max07.github.io/100-JS-Projects/5-Notes-App/)  
   A Simple notes app with delete note feature and local storage.
 
+- [Project 6: Age Calculator](https://manish-max07.github.io/100-JS-Projects/6-Age-Calculator/)  
+  Calculate Your age easily.
+
 - *(Add more projects as you complete them)*
 
 ## Getting Started

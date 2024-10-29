@@ -59,3 +59,9 @@
     cursor: pointer;
     
 }
+@media screen and (max-width:600px){
+    .input-box{
+        width: 90%;
+    }
+
+}

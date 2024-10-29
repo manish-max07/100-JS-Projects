@@ -98,3 +98,63 @@ body{
     margin-top: 10px;
     display: none;
 }
+@media screen and (max-width: 600px) {
+    .card {
+        max-width: 90%;  /* Use more width on smaller screens */
+        padding: 20px 15px; /* Reduce padding */
+    }
+
+    .search {
+        flex-direction: row; /* Keep items in a row */
+        align-items: center; /* Center items */
+        justify-content: flex-start; /* Align to the left */
+    }
+
+    .search input {
+        margin-right: 8px; /* Space between input and button */
+        height: 50px; /* Adjust input height */
+        width: calc(100% - 70px); /* Make width dynamic based on button size */
+        max-width: 300px; /* Limit maximum width */
+    }
+
+    .search button {
+        width: 50px; /* Keep button width */
+        height: 50px; /* Keep button height equal to width */
+        border-radius: 50%; /* Ensure it's circular */
+        display: flex; /* Center the icon */
+        align-items: center; /* Center icon vertically */
+        justify-content: center; /* Center icon horizontally */
+        padding: 0; /* Remove padding */
+    }
+
+    .search button img {
+        width: 16px; /* Keep icon size appropriate */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .weather h1 {
+        font-size: 50px; /* Decrease size for smaller screens */
+    }
+
+    .weather h2 {
+        font-size: 30px; /* Decrease size for smaller screens */
+    }
+
+    .details {
+        flex-direction: column; /* Stack detail columns */
+        align-items: flex-start; /* Align items to the left */
+        margin-top: 20px; /* Adjust margin */
+    }
+
+    .col {
+        margin-bottom: 10px; /* Add spacing between details */
+    }
+
+    .humidity, .wind {
+        font-size: 24px; /* Adjust font size */
+    }
+
+    .error {
+        font-size: 12px; /* Adjust error message size */
+    }
+}

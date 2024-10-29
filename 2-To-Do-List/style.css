@@ -4,10 +4,13 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+body{
+    background: linear-gradient(135deg, #153677,#4e085f);
+}
 .container{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #153677,#4e085f);
+    /* background: linear-gradient(135deg, #153677,#4e085f); */
     padding: 10px;
 }
 .todo-app{
@@ -98,4 +101,20 @@ ul li span{
 }
 ul li span:hover{
     background: #edeef0;
+}
+@media screen and (max-width:600px){
+    .container{
+        width: 94%;
+    }
+    .todo-app{
+        width: 92%;
+        max-width: 500;
+    }
+    button{
+        padding: 12px 12px;
+        font-size: 12px;
+        border-radius: 15px;
+    
+    }
+
 }

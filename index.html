@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - My 100 JS Projects</title>
     <style>
+        /* Existing CSS code */
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -15,7 +16,7 @@
             margin: 0;
             padding: 0;
         }
-        
+
         h1 {
             color: #333;
             text-align: center;
@@ -42,7 +43,6 @@
             transition: width 0.3s ease;
         }
 
-        /* Iframe container to handle scaling */
         .iframe-container {
             position: relative;
             width: 100%;
@@ -55,10 +55,10 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 1440px;  /* Full desktop width */
-            height: 900px;  /* Full desktop height */
-            transform: scale(0.46);  /* Scale down to fit container */
-            transform-origin: top left;  /*Keep scale relative to the top-left corner */
+            width: 1440px;
+            height: 900px;
+            transform: scale(0.46);
+            transform-origin: top left;
             border: none;
         }
 
@@ -96,7 +96,7 @@
             }
 
             .iframe-container iframe {
-                transform: scale(0.3);  /* Smaller scale for mobile */
+                transform: scale(0.3);
             }
         }
 
@@ -110,7 +110,7 @@
             }
 
             .iframe-container iframe {
-                transform: scale(0.3);  /* Smallest scale for smaller screens */
+                transform: scale(0.3);
             }
 
             h1 {
@@ -121,74 +121,40 @@
 </head>
 <body>
     <h1>Welcome to My 100 JavaScript Projects</h1>
-    <div class="project-grid">
-        <div class="project-card">
-            <div class="iframe-container">
-                <iframe src="https://manish-max07.github.io/100-JS-Projects/1-Weather-App/"></iframe>
-            </div>
-            <div class="project-title">Project 1: Weather App</div>
-            <a href="https://manish-max07.github.io/100-JS-Projects/1-Weather-App/" target="_blank" class="project-button">View</a>
-        </div>
-        
-        <div class="project-card">
-            <div class="iframe-container">
-                <iframe src="https://manish-max07.github.io/100-JS-Projects/2-To-Do-List/"></iframe>
-            </div>
-            <div class="project-title">Project 2: To-Do List</div>
-            <a href="https://manish-max07.github.io/100-JS-Projects/2-To-Do-List/" target="_blank" class="project-button">View</a>
-        </div>
-        <div class="project-card">
-            <div class="iframe-container">
-                <iframe src="https://manish-max07.github.io/100-JS-Projects/3-Quiz-App/"></iframe>
-            </div>
-            <div class="project-title">Project 3: Simple Quiz App</div>
-            <a href="https://manish-max07.github.io/100-JS-Projects/3-Quiz-App/" target="_blank" class="project-button">View</a>
-        </div>
-        <div class="project-card">
-            <div class="iframe-container">
-                <iframe src="https://manish-max07.github.io/100-JS-Projects/4-Password-Generator/"></iframe>
-            </div>
-            <div class="project-title">Project 4: Random Password Generator</div>
-            <a href="https://manish-max07.github.io/100-JS-Projects/4-Password-Generator/" target="_blank" class="project-button">View</a>
-        </div>
-        <div class="project-card">
-            <div class="iframe-container">
-                <iframe src="https://manish-max07.github.io/100-JS-Projects/5-Notes-App/"></iframe>
-            </div>
-            <div class="project-title">Project 5: Notes App</div>
-            <a href="https://manish-max07.github.io/100-JS-Projects/5-Notes-App/" target="_blank" class="project-button">View</a>
-        </div>
-        <div class="project-card">
-            <div class="iframe-container">
-                <iframe src="https://manish-max07.github.io/100-JS-Projects/6-Age-Calculator/"></iframe>
-            </div>
-            <div class="project-title">Project 6: Age Calculator</div>
-            <a href="https://manish-max07.github.io/100-JS-Projects/6-Age-Calculator/" target="_blank" class="project-button">View</a>
-        </div>
-        <div class="project-card">
-            <div class="iframe-container">
-                <iframe src="https://manish-max07.github.io/100-JS-Projects/7-Quote-Generator/"></iframe>
-            </div>
-            <div class="project-title">Project 7: Quote Generator</div>
-            <a href="https://manish-max07.github.io/100-JS-Projects/7-Quote-Generator/" target="_blank" class="project-button">View</a>
-        </div>
-        <div class="project-card">
-            <div class="iframe-container">
-                <iframe src="https://manish-max07.github.io/100-JS-Projects/8-QR-Generator/"></iframe>
-            </div>
-            <div class="project-title">Project 8: QR Generator</div>
-            <a href="https://manish-max07.github.io/100-JS-Projects/8-QR-Generator/" target="_blank" class="project-button">View</a>
-        </div>
-        <div class="project-card">
-            <div class="iframe-container">
-                <iframe src="https://manish-max07.github.io/100-JS-Projects/9-Toast-Notification/"></iframe>
-            </div>
-            <div class="project-title">Project 9: Toast-Notification</div>
-            <a href="https://manish-max07.github.io/100-JS-Projects/9-Toast-Notification/" target="_blank" class="project-button">View</a>
-        </div>
-        
-        
-        <!-- Add more project cards as you complete them -->
-    </div>
+    <div class="project-grid" id="project-grid"></div>
+
+    <script>
+        // Array of projects
+        const projects = [
+            { title: "Project 1: Weather App", link: "https://manish-max07.github.io/100-JS-Projects/1-Weather-App/", iframe: "https://manish-max07.github.io/100-JS-Projects/1-Weather-App/" },
+            { title: "Project 2: To-Do List", link: "https://manish-max07.github.io/100-JS-Projects/2-To-Do-List/", iframe: "https://manish-max07.github.io/100-JS-Projects/2-To-Do-List/" },
+            { title: "Project 3: Simple Quiz App", link: "https://manish-max07.github.io/100-JS-Projects/3-Quiz-App/", iframe: "https://manish-max07.github.io/100-JS-Projects/3-Quiz-App/" },
+            { title: "Project 4: Random Password Generator", link: "https://manish-max07.github.io/100-JS-Projects/4-Password-Generator/", iframe: "https://manish-max07.github.io/100-JS-Projects/4-Password-Generator/" },
+            { title: "Project 5: Notes App", link: "https://manish-max07.github.io/100-JS-Projects/5-Notes-App/", iframe: "https://manish-max07.github.io/100-JS-Projects/5-Notes-App/" },
+            { title: "Project 6: Age Calculator", link: "https://manish-max07.github.io/100-JS-Projects/6-Age-Calculator/", iframe: "https://manish-max07.github.io/100-JS-Projects/6-Age-Calculator/" },
+            { title: "Project 7: Quote Generator", link: "https://manish-max07.github.io/100-JS-Projects/7-Quote-Generator/", iframe: "https://manish-max07.github.io/100-JS-Projects/7-Quote-Generator/" },
+            { title: "Project 8: QR Generator", link: "https://manish-max07.github.io/100-JS-Projects/8-QR-Generator/", iframe: "https://manish-max07.github.io/100-JS-Projects/8-QR-Generator/" },
+            { title: "Project 9: Toast Notification", link: "https://manish-max07.github.io/100-JS-Projects/9-Toast-Notification/", iframe: "https://manish-max07.github.io/100-JS-Projects/9-Toast-Notification/" }
+        ];
+
+        // Select the project grid
+        const projectGrid = document.getElementById("project-grid");
+
+        // Dynamically create project cards
+        projects.forEach(project => {
+            const projectCard = document.createElement("div");
+            projectCard.className = "project-card";
+
+            projectCard.innerHTML = `
+                <div class="iframe-container">
+                    <iframe src="${project.iframe}"></iframe>
+                </div>
+                <div class="project-title">${project.title}</div>
+                <a href="${project.link}" target="_blank" class="project-button">View</a>
+            `;
+
+            projectGrid.appendChild(projectCard);
+        });
+    </script>
 </body>
 </html>

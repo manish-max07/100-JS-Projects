@@ -84,6 +84,42 @@
         .project-button:hover {
             background-color: #005f99;
         }
+        /* Pagination controls */
+        .pagination {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        .pagination button {
+            padding: 8px 12px;
+            border: none;
+            background-color: #007acc;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .pagination button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        .pagination .page-number {
+            padding: 8px 12px;
+            background-color: #f4f4f9;
+            color: #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pagination .active {
+            background-color: #005f99;
+            color: white;
+        }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -122,6 +158,12 @@
 <body>
     <h1>Welcome to My 100 JavaScript Projects</h1>
     <div class="project-grid" id="project-grid"></div>
+     <!-- Pagination Controls -->
+     <div class="pagination">
+        <button id="prev" onclick="prevPage()">Previous</button>
+        <span id="pageNumbers"></span>
+        <button id="next" onclick="nextPage()">Next</button>
+    </div>
 
     <script>
         // Array of projects
@@ -137,24 +179,69 @@
             { title: "Project 9: Toast Notification", link: "https://manish-max07.github.io/100-JS-Projects/9-Toast-Notification/", iframe: "https://manish-max07.github.io/100-JS-Projects/9-Toast-Notification/" }
         ];
 
-        // Select the project grid
-        const projectGrid = document.getElementById("project-grid");
+        const projectsPerPage = 10;
+        let currentPage = 1;
+        const totalPages = Math.ceil(projects.length / projectsPerPage);
 
-        // Dynamically create project cards
-        projects.forEach(project => {
-            const projectCard = document.createElement("div");
-            projectCard.className = "project-card";
+        function renderProjects() {
+            const projectGrid = document.getElementById("project-grid");
+            projectGrid.innerHTML = "";
+            const start = (currentPage - 1) * projectsPerPage;
+            const end = start + projectsPerPage;
+            const projectsToShow = projects.slice(start, end);
 
-            projectCard.innerHTML = `
-                <div class="iframe-container">
-                    <iframe src="${project.iframe}"></iframe>
-                </div>
-                <div class="project-title">${project.title}</div>
-                <a href="${project.link}" target="_blank" class="project-button">View</a>
-            `;
+            projectsToShow.forEach(project => {
+                const projectCard = document.createElement("div");
+                projectCard.className = "project-card";
+                projectCard.innerHTML = `
+                    <div class="iframe-container">
+                        <iframe src="${project.iframe}"></iframe>
+                    </div>
+                    <div class="project-title">${project.title}</div>
+                    <a href="${project.link}" target="_blank" class="project-button">View</a>
+                `;
+                projectGrid.appendChild(projectCard);
+            });
 
-            projectGrid.appendChild(projectCard);
-        });
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const pageNumbersContainer = document.getElementById("pageNumbers");
+            pageNumbersContainer.innerHTML = "";
+            for (let i = 1; i <= totalPages; i++) {
+                const pageNumber = document.createElement("span");
+                pageNumber.className = `page-number ${i === currentPage ? 'active' : ''}`;
+                pageNumber.textContent = i;
+                pageNumber.onclick = () => goToPage(i);
+                pageNumbersContainer.appendChild(pageNumber);
+            }
+
+            document.getElementById("prev").disabled = currentPage === 1;
+            document.getElementById("next").disabled = currentPage === totalPages;
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            renderProjects();
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderProjects();
+            }
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderProjects();
+            }
+        }
+
+        // Initial rendering
+        renderProjects();
     </script>
 </body>
 </html>

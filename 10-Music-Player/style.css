@@ -95,3 +95,18 @@ nav{
     
 
 }
+@media screen and (max-width: 600px) {
+    .music-player{
+        background: #ffe0e5;
+        width: 300px;
+        padding: 18px 28px;
+        text-align: center;
+    }
+    .controls div{
+        width: 40px;
+        height: 40px;
+        margin: 15px;
+    }
+
+
+}

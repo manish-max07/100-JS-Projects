@@ -53,3 +53,18 @@ form input.equal{
 form input.operator{
     color:#33ffd8;
 }
+/* Media query for smartphones (max width: 768px) */
+/* Media query for smartphones (max width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        transform: scale(0.8); /* Shrinks the entire calculator slightly */
+    }
+}
+
+/* Media query for very small smartphones (max width: 480px) */
+@media (max-width: 480px) {
+    .container {
+        transform: scale(0.6); /* Shrinks the entire calculator further */
+    }
+}
+
